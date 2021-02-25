@@ -13,8 +13,10 @@ let date_ob = new Date();
 // App
 const app = express();
 
-app.get('/T1/', (req, res) => {
-  res.send(JSON.stringify('Received: '+req.params.num + ' Squared : ' (req.params.id*req.params.num)));
+app.get('/T1/:num', (req, res) => {
+  var x = req.params.num ;
+  var squared = x*x;
+  res.send(JSON.stringify('Received: '+x + ' Squared : '+squared));
 });
 
 app.get('/T2', (req, res) => {
